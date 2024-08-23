@@ -1,8 +1,36 @@
 @import './base.scss';
 
+@font-face {
+    font-family: 'Commissioner';
+    src: url('@/assets/fonts/Commissioner/Commissioner-Regular.woff2') format('woff2'),
+        url('@/assets/fonts/Commissioner/Commissioner-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Commissioner';
+    src: url('@/assets/fonts/Commissioner/Commissioner-Bold.woff2') format('woff2'),
+        url('@/assets/fonts/Commissioner/Commissioner-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('@/assets/fonts/Druk/DrukWideCyr-Bold.woff2') format('woff2'),
+        url('@/assets/fonts/Druk/DrukWideCyr-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
 body {
     margin: 10px;
     padding: 0;
-    font-family: 'Arial', sans-serif;
     background-color: gray;
+    font-family: 'Druk', serif;
+}
+
+button {
+    font-family: 'Druk', serif;
 }

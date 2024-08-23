@@ -37,7 +37,7 @@
   display: flex;
   justify-content: space-between; /* Разместить группы элементов по краям */
   align-items: center;
-  padding: 1rem;
+  padding: 1.2rem;
   background-color: #fff;
   border-radius: 15px;
   margin-bottom: 8px;

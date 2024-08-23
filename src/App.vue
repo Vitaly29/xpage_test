@@ -2,12 +2,14 @@
   <div id="app">
     <Header />
     <Banner />
+    <CardsContainer />
   </div>
 </template>
 
 <script setup lang="ts">
 import Header from '@/components/Header.vue';
 import Banner from '@/components/Banner.vue';
+import CardsContainer from '@/components/CardsContainer.vue';
 </script>
 
 <style lang="scss">

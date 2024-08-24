@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__group">
       <div class="header__logo">
-        XPAGE
+        <img src="@/assets/icons/xpage.svg" alt="xpage">
       </div>
       <nav class="header__nav">
         <ul class="header__nav-list">
@@ -14,8 +14,9 @@
       </nav>
     </div>
     <div class="header__profile">
-      <button class="header__menu-button">
-        Меню
+      <button class="header__profile-button">
+        <img class="header__profile-icon" src="@/assets/icons/menu.svg">
+        <div>Меню</div>
       </button>
       <div class="header__profile-user">
         <span class="header__profile-user-name">Геннадий П.</span>
@@ -23,29 +24,30 @@
     </div>
   </header>
 </template>
-  
-  <script>
-  export default {
-    name: 'Header',
-  };
-  </script>
-  
-  <style lang="scss" scoped>
+
+<script>
+export default {
+  name: 'Header',
+};
+</script>
+
+<style lang="scss" scoped>
 @import '@/assets/styles/variables.scss';
 
 .header {
   display: flex;
-  justify-content: space-between; /* Разместить группы элементов по краям */
+  justify-content: space-between;
   align-items: center;
-  padding: 1.2rem;
+  padding: 0px 20px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 20px;
   margin-bottom: 8px;
+  height: 80px;
 
   &__group {
-    display: flex; /* Новый контейнер для логотипа и навигации */
-    align-items: center; /* Выравниваем по центру по вертикали */
-    gap: 2.5rem; /* Разделяем логотип и навигацию */
+    display: flex;
+    align-items: center;
+    gap: 64px;
   }
 
   &__logo {
@@ -55,6 +57,7 @@
   &__nav {
     &-list {
       display: flex;
+      align-items: center;
       gap: 1.5rem;
       list-style: none;
       padding: 0;
@@ -74,13 +77,16 @@
     gap: 1rem;
 
     &-button {
+      display: flex;
+      align-items: center;
       background: none;
       border: none;
       cursor: pointer;
+      background-color: #fff;
+      padding: 0;
     }
 
     &-icon {
-      width: 30px;
       height: auto;
     }
 

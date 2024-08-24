@@ -10,6 +10,7 @@
             @mouseover="setContent('play')"
           >
             Играй
+            <img src="@/assets/icons/arrow.svg">
           </button>
           <button
             class="banner__button"
@@ -17,6 +18,7 @@
             @mouseover="setContent('learn')"
           >
             Учись
+            <img src="@/assets/icons/arrow.svg">
           </button>
           <button
             class="banner__button"
@@ -24,6 +26,7 @@
             @mouseover="setContent('watch')"
           >
             Смотри
+            <img src="@/assets/icons/arrow.svg">
           </button>
         </div>
       </div>
@@ -78,7 +81,7 @@
     &__image {
       width: 100%;
       height: auto;
-      border-radius: 15px;
+      border-radius: 20px;
       transition: opacity 0.5s ease;
     }
   
@@ -90,8 +93,8 @@
       text-align: left;
   
       &__title {
-        width: 75%;
-        font-size: 5rem;
+        width: 80%;
+        font-size: 6rem;
         margin-bottom: 1rem;
       }
   
@@ -99,11 +102,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 0.3rem;
+        gap: 0.5rem;
       }
     }
   
     &__button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
       padding: 1rem 1rem;
       border: none;
@@ -117,11 +123,11 @@
   
       &:hover {
         color: white;
-        background-color: orangered;
+        background-color: #F36722;
       }
   
       &.active {
-        background-color: orangered;
+        background-color: #F36722;
         color: white;
       }
     }

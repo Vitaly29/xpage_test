@@ -4,7 +4,10 @@
     <!-- Заголовок страницы -->
     <header class="header">
       <h1 class="header__title">УЧИСЬ</h1>
-      <div class="header__link">В РАЗДЕЛ ➔</div>
+      <div class="header__link">
+        В РАЗДЕЛ
+        <arrow class="arrow" />
+      </div>
     </header>
 
     <!-- Основное содержимое страницы -->
@@ -12,23 +15,25 @@
       <div class="main-content__left">
         <!-- Главный баннер -->
         <section class="main-banner">
-          <img src="@/assets/images/1.webp" alt="Main Banner" class="main-banner__image"/>
+          <img src="@/assets/images/1.webp" alt="Main Banner" class="main-banner__image" />
           <div class="main-banner__text">
-            <h2>Мы собрали секции для детей по всему городу</h2>
-            <span>12 СЕКЦИЙ ПО ВСЕМУ ГОРОДУ</span>
+            <h2>МЫ СОБРАЛИ СЕКЦИИ ДЛЯ ДЕТЕЙ ПО ВСЕМУ ГОРОДУ</h2>
+            <div class="card__tags">
+              <span>12 СЕКЦИЙ ПО ВСЕМУ ГОРОДУ</span>
+            </div>
           </div>
         </section>
 
         <!-- Карточки под баннером -->
         <section class="cards-section">
           <div class="card">
-            <h3 class="card__title">Подбери тренера под свой уровень</h3>
+            <h3 class="card__title">ПОДБЕРИ ТРЕНЕРА ПОД СВОЙ УРОВЕНЬ</h3>
             <div class="card__tags">
               <span>Детская тренировка</span>
               <span>Для начинающих</span>
               <span>Стритбол</span>
               <span>Выезд тренера на дом</span>
-              <span>12 фильтров</span>
+              <span class="filter">12 фильтров</span>
             </div>
           </div>
         </section>
@@ -39,10 +44,10 @@
         <!-- Видеоуроки -->
         <div class="sidebar__section">
           <h3>ВИДЕОУРОКИ</h3>
-          <div class="sidebar__item">
-            <img src="@/assets/images/game3.png" alt="Видео урок" class="sidebar__thumbnail"/>
+          <div class="sidebar__section__item">
+            <img src="@/assets/images/game3.png" alt="Видео урок" class="sidebar__image" />
             <div class="sidebar__info">
-              <p>Евгений Воронов: "Бронзовые медали - оценка труда нашей команды"</p>
+              <div>Евгений Воронов: "Бронзовые медали - оценка труда нашей команды"</div>
               <span>26 октября</span>
             </div>
           </div>
@@ -50,11 +55,14 @@
 
         <!-- Статьи -->
         <div class="sidebar__section">
-          <h3>СТАТЬИ ➔</h3>
-          <div class="sidebar__item">
-            <!-- <img src="@/assets/images/article-thumbnail.jpg" alt="Статья" class="sidebar__thumbnail"/> -->
+          <h3 class="header__link">
+            СТАТЬИ
+            <arrow />
+          </h3>
+
+          <div class="sidebar__section__item">
             <div class="sidebar__info">
-              <p>Евгений Воронов: "Бронзовые медали - оценка труда нашей команды"</p>
+              <div>Евгений Воронов: "Бронзовые медали - оценка труда нашей команды"</div>
               <span>26 октября</span>
             </div>
           </div>
@@ -63,10 +71,12 @@
         <!-- Термины -->
         <div class="sidebar__section">
           <h3>ТЕРМИНЫ</h3>
-          <div class="sidebar__tags">
-            <span>Треха</span>
-            <span>Трехочковый бросок</span>
-            <span>36 терминов</span>
+          <div class="sidebar__section__item">
+            <div class="sidebar__info">
+              <span>Треха</span>
+              <span>Трехочковый бросок</span>
+              <span>36 терминов</span>
+            </div>
           </div>
         </div>
       </aside>
@@ -75,14 +85,18 @@
 </template>
 
 <script>
+import arrow from './icons/arrow.vue'
 export default {
-  name: "LearnPage"
+  name: "LearnPage",
+  components: {
+    arrow
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .page {
-  padding: 20px;
+  margin-top: 80px;
 }
 
 .header {
@@ -92,29 +106,36 @@ export default {
   margin-bottom: 20px;
 
   &__title {
-    font-size: 5rem;
-    font-weight: bold;
-    margin: 0;
+    font-size: 4rem;
   }
 
   &__link {
-    color: #008000; /* Зеленый цвет текста для соответствия картинке */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #008000;
     cursor: pointer;
     font-size: 1.2rem;
-    font-weight: bold; /* Жирный шрифт для выделения */
-    text-decoration: none; /* Убираем подчеркивание */
+    text-decoration: none;
   }
 }
 
 .main-content {
   display: flex;
-  gap: 20px; /* Отступ между основной колонкой и боковой панелью */
+  gap: 20px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+
 }
 
 .main-content__left {
-  flex: 3; /* Основная часть занимает больше места */
+  flex: 1.5;
+  /* Основная часть занимает больше места */
   display: flex;
   flex-direction: column;
+  position: relative;
+  // overflow: hidden;
+  // width: auto;
 }
 
 .main-banner {
@@ -123,40 +144,42 @@ export default {
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 20px;
-  width: 100%; /* Полная ширина */
-  height: 300px; /* Фиксированная высота баннера */
+  height: 600px;
 
   &__text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     position: absolute;
-    top: 50%; /* Центрирование по вертикали */
-    left: 20px;
-    transform: translateY(-50%); /* Центрирование текста по вертикали */
+    padding: 10px;
+    top: 0px;
+    left: 0px;
     color: white;
     z-index: 1;
-    width: 50%; /* Ограничиваем ширину текста для лучшего размещения */
+    height: 100%;
 
     h2 {
-      font-size: 2.5rem; /* Немного увеличиваем размер шрифта */
+      font-size: 2.5rem;
       font-weight: bold;
-      margin: 0; /* Убираем отступы */
-      line-height: 1.2; /* Регулируем межстрочный интервал для лучшей читабельности */
+      width: 75%;
     }
 
     span {
       font-size: 1rem;
-      display: block;
-      margin-top: 10px;
-      background-color: #008000; /* Зеленый фон для соответствия стилю */
+      background-color: white;
+      color: green;
       padding: 5px 10px;
-      border-radius: 5px; /* Скругленные углы */
+      border-radius: 5px;
     }
   }
 
   &__image {
-    width: 100%;
+    width: 170%;
     height: 100%;
-    object-fit: cover; /* Картинка обрезается, чтобы заполнить контейнер */
-    object-position: center; /* Картинка центрируется */
+    overflow: hidden;
+    position: relative;
+    object-fit: cover;
+    object-position: top;
   }
 }
 
@@ -165,23 +188,36 @@ export default {
   flex-direction: column;
   gap: 20px;
   margin-bottom: 20px;
+  height: 250px;
 
   .card {
-    background-color: #008000; /* Зеленый фон для соответствия стилю */
+    background-color: #008000;
     color: white;
     padding: 20px;
     border-radius: 20px;
     flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
     &__title {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
+      width: 75%;
     }
 
     &__tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      width: 75%;
+
+      .filter {
+        background-color: white;
+        color: #006600;
+        padding: 5px 10px;
+        border-radius: 10px;
+      }
 
       span {
         background-color: #006600;
@@ -193,16 +229,21 @@ export default {
 }
 
 .sidebar {
-  flex: 1; /* Боковая панель занимает меньше места */
+  flex: 1;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
 
   &__section {
     background-color: #ffffff;
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     h3 {
       font-size: 1.2rem;
@@ -211,25 +252,28 @@ export default {
 
     &__item {
       display: flex;
+      align-items: end;
+      justify-content: space-between;
       gap: 10px;
       margin-bottom: 10px;
 
-      .sidebar__thumbnail {
-        width: 100px; /* Увеличиваем размер изображения */
-        height: 70px;
+      .sidebar__image {
         object-fit: cover;
         border-radius: 10px;
       }
 
       .sidebar__info {
-        p {
-          font-size: 0.9rem;
-          margin-bottom: 5px;
-        }
+        height: 100%;
+        width: 75%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
 
         span {
           font-size: 0.8rem;
-          color: gray;
+          background-color: #EFEFEF;
+          padding: 10px;
+          border-radius: 25px;
         }
       }
     }
@@ -249,4 +293,7 @@ export default {
   }
 }
 
+.arrow {
+  color: green;
+}
 </style>

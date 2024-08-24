@@ -1,22 +1,16 @@
 <template>
-  <div>
-    <div class="group">
-      <h1 class="group__title">Играй</h1>
-      <div class="group__link" @click="navigateToSection">
-        <div>В раздел</div>
-        <img class="group__link-arrow" src="@/assets/icons/arrow.svg" />
+  <div class="page">
+    <header class="header">
+      <h1 class="header__title">ИГРАЙ</h1>
+      <div class="header__link">
+        В РАЗДЕЛ
+        <arrow class="arrow" />
+        <!-- <img src="@/assets/icons/arrow.svg" /> -->
       </div>
-    </div>
+    </header>
     <div class="cards-container">
-      <Card
-        v-for="(card, index) in cards"
-        :key="index"
-        :image="card.image"
-        :title="card.title"
-        :description="card.description"
-        :noRadius="index === 1"  
-        :shiftRight="index === 1"
-      />
+      <Card v-for="(card, index) in cards" :key="index" :image="card.image" :title="card.title"
+        :description="card.description" :noRadius="index === 1" :shiftRight="index === 1" />
     </div>
   </div>
 </template>
@@ -26,11 +20,13 @@ import Card from "@/components/Card.vue";
 import image1 from "@/assets/images/game1.png";
 import image2 from "@/assets/images/ball.png";
 import image3 from "@/assets/images/game2.png";
+import arrow from '@/components/icons/arrow.vue';
 
 export default {
   name: "CardsContainer",
   components: {
     Card,
+    arrow
   },
   data() {
     return {
@@ -58,7 +54,6 @@ export default {
   },
   methods: {
     navigateToSection() {
-      // Логика для навигации в нужный раздел
       console.log('Navigating to section');
     },
   },
@@ -66,46 +61,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.page {
+  margin-top: 80px;
+}
+
 .cards-container {
   width: 100%;
   display: flex;
   gap: 20px;
   justify-content: space-around;
-  padding: 40px 20px;
 }
 
-.group {
+.header {
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  margin: 20px 0;
-  padding: 0 20px;
+  align-items: center;
+  margin-bottom: 20px;
 
   &__title {
-    font-size: 5rem;
-    font-weight: bold;
-    margin: 0;
+    font-size: 4rem;
   }
 
   &__link {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    gap: 1rem;
     color: #f06449;
     cursor: pointer;
+    font-size: 1.2rem;
     text-decoration: none;
-    transition: color 0.3s ease;
-
-    &-arrow {
-      stroke: #d9534f;
-      fill: black;
-    }
-
-    &:hover {
-      color: #d9534f;
-    }
   }
 }
 </style>

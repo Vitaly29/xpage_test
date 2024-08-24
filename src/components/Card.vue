@@ -77,12 +77,12 @@ export default {
         transition: transform 0.3s ease;
     }
 
-    &__image {
-        width: auto;
-        object-fit: cover;
-        object-position: bottom;
-        transition: transform 0.3s ease;
-    }
+    // &__image {
+    //     width: auto;
+    //     // object-fit: cover;
+    //     // object-position: bottom;
+    //     transition: transform 0.3s ease;
+    // }
 
     &__content {
         margin: 20px;

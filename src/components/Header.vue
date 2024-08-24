@@ -1,9 +1,7 @@
 <template>
   <header class="header">
     <div class="header__group">
-      <div class="header__logo">
-        <img src="@/assets/icons/xpage.svg" alt="xpage">
-      </div>
+      <img class="header__logo" src="@/assets/icons/xpage.svg" alt="xpage">
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item"><a href="#" class="header__nav-link">Играть</a></li>
@@ -47,11 +45,12 @@ export default {
   &__group {
     display: flex;
     align-items: center;
+    height: auto;
     gap: 64px;
   }
 
   &__logo {
-    font-weight: bold;
+    height: auto;
   }
 
   &__nav {
@@ -87,7 +86,9 @@ export default {
     }
 
     &-icon {
-      height: auto;
+      display: flex;
+      align-items: center;
+      // height: auto;
     }
 
     &-user {

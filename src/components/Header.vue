@@ -14,7 +14,7 @@
     <div class="header__profile">
       <button class="header__profile-button">
         <img class="header__profile-icon" src="@/assets/icons/menu.svg">
-        <div>МЕНЮ</div>
+        МЕНЮ
       </button>
       <div class="header__profile-user">
         <span class="header__profile-user-name">
@@ -71,7 +71,7 @@ export default {
     &-link {
       text-decoration: none;
       color: #000;
-      font-weight: bold;
+      // font-weight: bold;
     }
   }
 
@@ -86,7 +86,7 @@ export default {
       background: none;
       border: none;
       cursor: pointer;
-      background-color: #fff;
+      // background-color: #fff;
       padding: 0;
       gap: 8px;
     }
@@ -103,8 +103,8 @@ export default {
 
       &-name {
         display: flex;
-        align-items:center;
-        
+        align-items: center;
+
         gap: 10px;
       }
 

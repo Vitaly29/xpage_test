@@ -5,7 +5,6 @@
       <div class="header__link">
         В РАЗДЕЛ
         <arrow class="arrow" />
-        <!-- <img src="@/assets/icons/arrow.svg" /> -->
       </div>
     </header>
     <div class="cards-container">
@@ -62,21 +61,20 @@ export default {
 
 <style lang="scss" scoped>
 .page {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .cards-container {
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   justify-content: space-around;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 
   &__title {
     font-size: 4rem;
@@ -84,7 +82,7 @@ export default {
 
   &__link {
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 1rem;
     color: #f06449;
     cursor: pointer;

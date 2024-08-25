@@ -66,7 +66,7 @@ export default {
     &:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        background-color: #202020; // Серый фон при наведении
+        background-color: #202020;
         color: #ffffff;
     }
 
@@ -76,20 +76,10 @@ export default {
         width: auto;
         height: auto;
         overflow: hidden;
-        // position: relative;
         border-radius: 0 0 50vh 50vh;
-        // object-fit: cover;
-        // object-position: top;
         transition: transform 0.3s ease;
+        margin-bottom: 30px;
     }
-
-    // &__image {
-    //     width: 100%;
-    //     height: 100%;
-    //     object-fit: cover;
-    //     object-position: top;
-    //     transition: transform 0.3s ease;
-    // }
 
     &__content {
         margin: 20px;
@@ -98,7 +88,7 @@ export default {
     }
 
     &__title {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 0.5rem;
         width: 70%;
@@ -142,10 +132,13 @@ export default {
     }
 
     &__description {
+        padding-top: 10px;
         font-size: 1rem;
         margin: 0;
         height: auto;
+        width: 75%;
         transition: color 0.3s ease;
+        text-transform: none;
     }
 
     &--no-radius {

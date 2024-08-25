@@ -22,21 +22,24 @@
         url('@/assets/fonts/Druk/DrukWideCyr-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    text-transform: uppercase;
 }
 
 body {
-    margin: 10px;
+    margin: 1rem;
     padding: 0;
     background-color: gainsboro;
     font-family: 'Druk', serif;
     font-size: 1rem;
+    text-transform: uppercase;
 }
 
 button {
     font-family: 'Druk', serif;
-    font-size: 1rem;
+    text-transform: uppercase;
 }
 
 p {
     font-family: 'Commissioner', serif;
+    text-transform: none;
 }

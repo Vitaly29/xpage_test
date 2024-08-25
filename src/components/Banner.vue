@@ -29,8 +29,8 @@ import image3 from '@/assets/images/3.webp';
 import arrow from './icons/arrow.vue';
 // Данные
 const image1Title = 'Найди с кем поиграть в баскет';
-const image2Title = 'Учись и развивайся!';
-const image3Title = 'Смотри и вдохновляйся!';
+const image2Title = 'Учись и развивайся';
+const image3Title = 'Смотри и вдохновляйся';
 
 // Реактивные состояния
 const currentImage = ref(image1);
@@ -42,15 +42,15 @@ const setContent = (type: string) => {
   activeButton.value = type;
   switch (type) {
     case 'play':
-      currentImage.value = image1;
+      currentImage.value = image3;
       currentTitle.value = image1Title;
       break;
     case 'learn':
-      currentImage.value = image2;
+      currentImage.value = image1;
       currentTitle.value = image2Title;
       break;
     case 'watch':
-      currentImage.value = image3;
+      currentImage.value = image2;
       currentTitle.value = image3Title;
       break;
   }
@@ -82,7 +82,7 @@ const setContent = (type: string) => {
 
     &__title {
       width: 80%;
-      font-size: 6rem;
+      font-size: 5rem;
       margin-bottom: 1rem;
     }
 
@@ -125,7 +125,6 @@ const setContent = (type: string) => {
 
     .group__link-arrow {
       color: green;
-      /* Или любой другой цвет */
     }
   }
 }

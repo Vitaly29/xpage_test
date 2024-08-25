@@ -17,7 +17,7 @@
           <img src="@/assets/images/1.webp" alt="Main Banner" class="main-banner__image" />
           <div class="main-banner__text">
             <h2>МЫ СОБРАЛИ СЕКЦИИ ДЛЯ ДЕТЕЙ ПО ВСЕМУ ГОРОДУ</h2>
-            <div class="card__tags">
+            <div class="main-banner__text__tags">
               <span>12 СЕКЦИЙ ПО ВСЕМУ ГОРОДУ</span>
             </div>
           </div>
@@ -74,7 +74,7 @@
         </div>
 
         <div class="divider"></div>
-        
+
         <!-- Термины -->
         <div class="sidebar__section">
           <h3>ТЕРМИНЫ</h3>
@@ -82,7 +82,7 @@
             <div class="sidebar__info__tags">
               <span>Треха</span>
               <span>Трехочковый бросок</span>
-              <span>36 терминов</span>
+              <span class="term">36 терминов</span>
             </div>
           </div>
         </div>
@@ -103,17 +103,17 @@ export default {
 
 <style lang="scss" scoped>
 .page {
-  margin-top: 80px;
+  margin-top: 100px;
   background-color: white;
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 10px;
 
   &__title {
     font-size: 4rem;
@@ -121,9 +121,9 @@ export default {
 
   &__link {
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 1rem;
-    color: #008000;
+    color: #2E8D43;
     cursor: pointer;
     font-size: 1.2rem;
     text-decoration: none;
@@ -137,7 +137,7 @@ export default {
 }
 
 .main-content__left {
-  flex: 1.5;
+  flex: 2;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -145,7 +145,7 @@ export default {
 
 .main-banner {
   position: relative;
-  background-color: #f5f5f5;
+  background-color: white;
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -156,35 +156,44 @@ export default {
     justify-content: space-between;
     flex-direction: column;
     position: absolute;
-    padding: 10px;
+    padding: 20px;
     top: 0px;
     left: 0px;
     color: white;
     z-index: 1;
     height: 100%;
 
-    h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      width: 75%;
+    div {
+      margin-bottom: 10px;
     }
 
     span {
       font-size: 1rem;
       background-color: white;
-      color: green;
-      padding: 5px 10px;
-      border-radius: 5px;
+      color: #2E8D43;
+      padding: 10px 15px;
+      border-radius: 40px;
+
     }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      width: 70%;
+    }
+
+
   }
 
+
+
   &__image {
-    width: 170%;
-    height: 100%;
+    width: 120%;
+    height: 120%;
     overflow: hidden;
     position: relative;
     object-fit: cover;
-    object-position: top;
+    object-position: left top;
   }
 }
 
@@ -196,7 +205,7 @@ export default {
   height: 100%;
 
   .card {
-    background-color: #008000;
+    background-color: #2E8D43;
     color: white;
     padding: 20px;
     border-radius: 20px;
@@ -219,15 +228,15 @@ export default {
 
       .filter {
         background-color: white;
-        color: #006600;
-        padding: 5px 10px;
-        border-radius: 10px;
+        color: #2E8D43;
+        padding: 10px 15px;
+        border-radius: 40px;
       }
 
       span {
-        background-color: #006600;
-        padding: 5px 10px;
-        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px 15px;
+        border-radius: 40px;
       }
     }
   }
@@ -239,7 +248,7 @@ export default {
   justify-content: space-between;
   flex-direction: column;
   gap: 1rem;
-  border-left: 2px solid #e0e0e0;
+  border-left: 1px solid #C4C4C4;
   padding-left: 20px;
 
   &__section {
@@ -268,7 +277,6 @@ export default {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-
         gap: 10px;
 
         &__tags {
@@ -278,9 +286,16 @@ export default {
 
           span {
             background-color: #EFEFEF;
-            padding: 5px;
-            border-radius: 25px;
-            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 40px;
+            font-size: 12px;
+          }
+
+          .term {
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 40px;
           }
         }
       }
@@ -292,7 +307,7 @@ export default {
       flex-wrap: wrap;
 
       span {
-        background-color: #e0e0e0;
+        background-color: #EFEFEF;
         padding: 5px 10px;
         border-radius: 10px;
         font-size: 0.9rem;
@@ -302,13 +317,13 @@ export default {
 }
 
 .divider {
-  height: 5px;
-  background-color: #e0e0e0;
+  height: 1px;
+  background-color: #C4C4C4;
   width: 100%;
   align-self: center;
 }
 
 .arrow {
-  color: green;
+  color: #2E8D43;
 }
 </style>

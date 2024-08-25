@@ -61,7 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     align-items: start;
     position: relative;
@@ -75,13 +75,12 @@ export default {
     }
 
     &__title {
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: bold;
         color: #000000;
     }
 
     &__app-links {
-
         margin-top: 20px;
         display: flex;
         gap: 20px;
@@ -105,15 +104,19 @@ export default {
     }
 
     &__qr-container {
-        margin-top: 50px;
-        align-items: center;
+        // margin-top: 20px;
+        // margin-left: 50px;
+        position: absolute;
+        top: 20px;
+        right: 12%;
+        // align-items: end;
         z-index: 2;
         max-width: 300px;
     }
 
     &__qr {
         background-color: #ffffff;
-        padding: 30px;
+        padding: 40px;
         border-radius: 10px;
         z-index: 2;
         text-align: center;
@@ -122,13 +125,14 @@ export default {
     &__qr-image {
         width: 100%;
         height: 100%;
-        padding: 30px;
+        padding: 0px 30px 30px;
         object-fit: contain;
     }
 
     &__qr-title {
         font-size: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        font-size: 13px;
     }
 
     &__qr-text {
@@ -138,9 +142,9 @@ export default {
 
     &__credit {
         position: absolute;
-        bottom: 0px;
+        bottom: 10px;
         left: 0px;
-        font-size: 1rem;
+        font-size: 14px;
     }
 }
 
@@ -148,14 +152,14 @@ export default {
     height: 400px;
     object-fit: contain;
     position: absolute;
-    bottom: -10px;
-    right: -10px;
+    bottom: -1rem;
+    right: -1rem;
     z-index: 1
 }
 
 .divider {
-    margin-top: 80px;
-    height: 2px;
+    margin-top: 100px;
+    height: 1px;
     background-color: black;
     width: 100%;
     align-self: center;

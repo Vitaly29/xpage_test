@@ -4,20 +4,24 @@
       <img class="header__logo" src="@/assets/icons/xpage.svg" alt="xpage">
       <nav class="header__nav">
         <ul class="header__nav-list">
-          <li class="header__nav-item"><a href="#" class="header__nav-link">Играть</a></li>
-          <li class="header__nav-item"><a href="#" class="header__nav-link">Смотреть</a></li>
-          <li class="header__nav-item"><a href="#" class="header__nav-link">Учиться</a></li>
-          <li class="header__nav-item"><a href="#" class="header__nav-link">Мероприятия</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">ИГРАТЬ</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">СМОТРЕТЬ</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">УЧИТЬСЯ</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">МЕРОПРИЯТИЯ</a></li>
         </ul>
       </nav>
     </div>
     <div class="header__profile">
       <button class="header__profile-button">
         <img class="header__profile-icon" src="@/assets/icons/menu.svg">
-        <div>Меню</div>
+        <div>МЕНЮ</div>
       </button>
       <div class="header__profile-user">
-        <span class="header__profile-user-name">Геннадий П.</span>
+        <span class="header__profile-user-name">
+          ГЕНАДИЙ П.
+          <img src="@/assets/images/user.png" alt="Пользователь" class="header__profile-user-image" />
+        </span>
+
       </div>
     </div>
   </header>
@@ -41,6 +45,7 @@ export default {
   border-radius: 20px;
   margin-bottom: 8px;
   height: 80px;
+  font-size: 0.8rem;
 
   &__group {
     display: flex;
@@ -83,12 +88,12 @@ export default {
       cursor: pointer;
       background-color: #fff;
       padding: 0;
+      gap: 8px;
     }
 
     &-icon {
       display: flex;
       align-items: center;
-      // height: auto;
     }
 
     &-user {
@@ -97,9 +102,22 @@ export default {
       gap: 0.5rem;
 
       &-name {
-        font-weight: bold;
+        display: flex;
+        align-items:center;
+        
+        gap: 10px;
+      }
+
+      &-image {
+        border-radius: 100%;
       }
     }
+  }
+
+  span {
+    background-color: #EFEFEF;
+    padding: 3px 3px 3px 15px;
+    border-radius: 25px;
   }
 }
 </style>

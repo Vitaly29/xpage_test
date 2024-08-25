@@ -8,14 +8,16 @@
             <p class="card__description">{{ description }}</p>
         </div>
         <button class="card__button">
-            Кнопка
-            <img src="@/assets/icons/arrow.svg">
+            Текст кнопки
+            <arrow src="@/assets/icons/arrow.svg"/>
         </button>
     </div>
 </template>
 
 
 <script>
+import arrow from './icons/arrow.vue';
+
 export default {
     name: "Card",
     props: {
@@ -40,6 +42,9 @@ export default {
             default: false,
         },
     },
+    components: {
+        arrow
+    },
 };
 </script>
 
@@ -56,6 +61,7 @@ export default {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    width: 100%;
 
     &:hover {
         transform: translateY(-5px);
@@ -70,17 +76,18 @@ export default {
         width: auto;
         height: auto;
         overflow: hidden;
-        position: relative;
+        // position: relative;
         border-radius: 0 0 50vh 50vh;
-        object-fit: cover;
-        object-position: bottom;
+        // object-fit: cover;
+        // object-position: top;
         transition: transform 0.3s ease;
     }
 
     // &__image {
-    //     width: auto;
-    //     // object-fit: cover;
-    //     // object-position: bottom;
+    //     width: 100%;
+    //     height: 100%;
+    //     object-fit: cover;
+    //     object-position: top;
     //     transition: transform 0.3s ease;
     // }
 

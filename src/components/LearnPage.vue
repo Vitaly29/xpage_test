@@ -1,4 +1,3 @@
-<!-- LearnPage.vue -->
 <template>
   <div class="page">
     <!-- Заголовок страницы -->
@@ -48,10 +47,14 @@
             <img src="@/assets/images/game3.png" alt="Видео урок" class="sidebar__image" />
             <div class="sidebar__info">
               <div>Евгений Воронов: "Бронзовые медали - оценка труда нашей команды"</div>
-              <span>26 октября</span>
+              <div class="sidebar__info__tags">
+                <span>26 октября</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="divider"></div>
 
         <!-- Статьи -->
         <div class="sidebar__section">
@@ -63,16 +66,20 @@
           <div class="sidebar__section__item">
             <div class="sidebar__info">
               <div>Евгений Воронов: "Бронзовые медали - оценка труда нашей команды"</div>
-              <span>26 октября</span>
+              <div class="sidebar__info__tags">
+                <span>26 октября</span>
+              </div>
             </div>
           </div>
         </div>
 
+        <div class="divider"></div>
+        
         <!-- Термины -->
         <div class="sidebar__section">
           <h3>ТЕРМИНЫ</h3>
           <div class="sidebar__section__item">
-            <div class="sidebar__info">
+            <div class="sidebar__info__tags">
               <span>Треха</span>
               <span>Трехочковый бросок</span>
               <span>36 терминов</span>
@@ -97,6 +104,9 @@ export default {
 <style lang="scss" scoped>
 .page {
   margin-top: 80px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .header {
@@ -123,19 +133,14 @@ export default {
 .main-content {
   display: flex;
   gap: 20px;
-  background-color: #f5f5f5;
-  border-radius: 20px;
 
 }
 
 .main-content__left {
   flex: 1.5;
-  /* Основная часть занимает больше места */
   display: flex;
   flex-direction: column;
   position: relative;
-  // overflow: hidden;
-  // width: auto;
 }
 
 .main-banner {
@@ -144,7 +149,7 @@ export default {
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 20px;
-  height: 600px;
+  height: 100%;
 
   &__text {
     display: flex;
@@ -184,19 +189,19 @@ export default {
 }
 
 .cards-section {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-bottom: 20px;
-  height: 250px;
+  gap: 50px;
+  height: 100%;
 
   .card {
     background-color: #008000;
     color: white;
     padding: 20px;
     border-radius: 20px;
-    flex: 1;
     display: flex;
+    gap: 50px;
     justify-content: space-between;
     flex-direction: column;
 
@@ -234,12 +239,10 @@ export default {
   justify-content: space-between;
   flex-direction: column;
   gap: 1rem;
+  border-left: 2px solid #e0e0e0;
+  padding-left: 20px;
 
   &__section {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -252,10 +255,7 @@ export default {
 
     &__item {
       display: flex;
-      align-items: end;
-      justify-content: space-between;
       gap: 10px;
-      margin-bottom: 10px;
 
       .sidebar__image {
         object-fit: cover;
@@ -263,17 +263,25 @@ export default {
       }
 
       .sidebar__info {
-        height: 100%;
+        height: auto;
         width: 75%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
 
-        span {
-          font-size: 0.8rem;
-          background-color: #EFEFEF;
-          padding: 10px;
-          border-radius: 25px;
+        gap: 10px;
+
+        &__tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+
+          span {
+            background-color: #EFEFEF;
+            padding: 5px;
+            border-radius: 25px;
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -291,6 +299,13 @@ export default {
       }
     }
   }
+}
+
+.divider {
+  height: 5px;
+  background-color: #e0e0e0;
+  width: 100%;
+  align-self: center;
 }
 
 .arrow {

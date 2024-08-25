@@ -2,19 +2,19 @@
   <div class="banner">
     <img :src="currentImage" alt="Basketball game" class="banner__image" />
     <div class="banner__content">
-      <h1 class="banner__content__title">{{ currentTitle }}</h1>
-      <div class="banner__content__buttons">
+      <h1 class="banner__title">{{ currentTitle }}</h1>
+      <div class="banner__buttons">
         <button class="banner__button" :class="{ active: activeButton === 'play' }" @mouseover="setContent('play')">
           Играй
-          <arrow class="arrow"/>
+          <arrow class="banner__arrow" />
         </button>
         <button class="banner__button" :class="{ active: activeButton === 'learn' }" @mouseover="setContent('learn')">
           Учись
-          <arrow class="arrow"/>
+          <arrow class="banner__arrow" />
         </button>
         <button class="banner__button" :class="{ active: activeButton === 'watch' }" @mouseover="setContent('watch')">
           Смотри
-          <arrow class="arrow"/>
+          <arrow class="banner__arrow" />
         </button>
       </div>
     </div>
@@ -27,6 +27,7 @@ import image1 from '@/assets/images/1.webp';
 import image2 from '@/assets/images/2.webp';
 import image3 from '@/assets/images/3.webp';
 import arrow from './icons/arrow.vue';
+
 // Данные
 const image1Title = 'Найди с кем поиграть в баскет';
 const image2Title = 'Учись и развивайся';
@@ -61,10 +62,7 @@ const setContent = (type: string) => {
 @import '@/assets/styles/_variables';
 
 .banner {
-  // position: relative;
-  // text-align: center;
   color: white;
-
 
   &__image {
     width: 100%;
@@ -79,23 +77,23 @@ const setContent = (type: string) => {
     left: 20px;
     right: 20px;
     text-align: left;
+  }
 
-    &__title {
-      width: 80%;
-      font-size: 5rem;
-      margin-bottom: 1rem;
-    }
+  &__title {
+    width: 80%;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
 
-    &__buttons {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-    }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-    .arrow {
-      color: #fff;
-    }
+  &__arrow {
+    color: #fff;
   }
 
   &__button {
@@ -103,7 +101,7 @@ const setContent = (type: string) => {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1rem 1rem;
+    padding: 1rem;
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -121,10 +119,6 @@ const setContent = (type: string) => {
     &.active {
       background-color: #F36722;
       color: white;
-    }
-
-    .group__link-arrow {
-      color: green;
     }
   }
 }

@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-    <!-- Заголовок страницы -->
     <header class="header">
       <h1 class="header__title">УЧИСЬ</h1>
       <div class="header__link">
@@ -9,10 +8,8 @@
       </div>
     </header>
 
-    <!-- Основное содержимое страницы -->
     <main class="main-content">
       <div class="main-content__left">
-        <!-- Главный баннер -->
         <section class="main-banner">
           <img src="@/assets/images/1.webp" alt="Main Banner" class="main-banner__image" />
           <div class="main-banner__text">
@@ -23,7 +20,6 @@
           </div>
         </section>
 
-        <!-- Карточки под баннером -->
         <section class="cards-section">
           <div class="card">
             <h3 class="card__title">ПОДБЕРИ ТРЕНЕРА ПОД СВОЙ УРОВЕНЬ</h3>
@@ -38,65 +34,20 @@
         </section>
       </div>
 
-      <!-- Боковая панель -->
-      <aside class="sidebar">
-        <!-- Видеоуроки -->
-        <div class="sidebar__section">
-          <h3>ВИДЕОУРОКИ</h3>
-          <div class="sidebar__section__item">
-            <img src="@/assets/images/game3.png" alt="Видео урок" class="sidebar__image" />
-            <div class="sidebar__info">
-              <div>Евгений Воронов: "Бронзовые медали - оценка труда нашей команды"</div>
-              <div class="sidebar__info__tags">
-                <span>26 октября</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Статьи -->
-        <div class="sidebar__section">
-          <h3 class="header__link">
-            СТАТЬИ
-            <arrow />
-          </h3>
-
-          <div class="sidebar__section__item">
-            <div class="sidebar__info">
-              <div>Евгений Воронов: "Бронзовые медали - оценка труда нашей команды"</div>
-              <div class="sidebar__info__tags">
-                <span>26 октября</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Термины -->
-        <div class="sidebar__section">
-          <h3>ТЕРМИНЫ</h3>
-          <div class="sidebar__section__item">
-            <div class="sidebar__info__tags">
-              <span>Треха</span>
-              <span>Трехочковый бросок</span>
-              <span class="term">36 терминов</span>
-            </div>
-          </div>
-        </div>
-      </aside>
+      <Sidebar />
     </main>
   </div>
 </template>
 
 <script>
-import arrow from './icons/arrow.vue'
+import arrow from './icons/arrow.vue';
+import Sidebar from '@/components/Sidebar.vue';
+
 export default {
   name: "LearnPage",
   components: {
-    arrow
+    arrow,
+    Sidebar
   },
 };
 </script>
@@ -133,7 +84,6 @@ export default {
 .main-content {
   display: flex;
   gap: 20px;
-
 }
 
 .main-content__left {
@@ -173,7 +123,6 @@ export default {
       color: #2E8D43;
       padding: 10px 15px;
       border-radius: 40px;
-
     }
 
     h2 {
@@ -181,11 +130,7 @@ export default {
       font-weight: bold;
       width: 70%;
     }
-
-
   }
-
-
 
   &__image {
     width: 120%;
@@ -240,90 +185,5 @@ export default {
       }
     }
   }
-}
-
-.sidebar {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 1rem;
-  border-left: 1px solid #C4C4C4;
-  padding-left: 20px;
-
-  &__section {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    &__item {
-      display: flex;
-      gap: 10px;
-
-      .sidebar__image {
-        object-fit: cover;
-        border-radius: 10px;
-      }
-
-      .sidebar__info {
-        height: auto;
-        width: 75%;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        gap: 10px;
-
-        &__tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-
-          span {
-            background-color: #EFEFEF;
-            padding: 10px 15px;
-            border-radius: 40px;
-            font-size: 12px;
-          }
-
-          .term {
-            background-color: black;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 40px;
-          }
-        }
-      }
-    }
-
-    &__tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-
-      span {
-        background-color: #EFEFEF;
-        padding: 5px 10px;
-        border-radius: 10px;
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
-
-.divider {
-  height: 1px;
-  background-color: #C4C4C4;
-  width: 100%;
-  align-self: center;
-}
-
-.arrow {
-  color: #2E8D43;
 }
 </style>

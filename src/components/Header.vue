@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__group">
-      <img class="header__logo" src="@/assets/icons/xpage.svg" alt="xpage">
+      <img class="header__logo" src="@/assets/icons/xpage.svg" alt="xpage" />
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item"><a href="#" class="header__nav-link">ИГРАТЬ</a></li>
@@ -13,7 +13,7 @@
     </div>
     <div class="header__profile">
       <button class="header__profile-button">
-        <img class="header__profile-icon" src="@/assets/icons/menu.svg">
+        <img class="header__profile-icon" src="@/assets/icons/menu.svg" alt="Меню" />
         МЕНЮ
       </button>
       <div class="header__profile-user">
@@ -21,7 +21,6 @@
           ГЕНАДИЙ П.
           <img src="@/assets/images/user.png" alt="Пользователь" class="header__profile-user-image" />
         </span>
-
       </div>
     </div>
   </header>
@@ -40,7 +39,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0 20px;
   background-color: #fff;
   border-radius: 20px;
   margin-bottom: 8px;
@@ -50,7 +49,6 @@ export default {
   &__group {
     display: flex;
     align-items: center;
-    height: auto;
     gap: 64px;
   }
 
@@ -71,7 +69,10 @@ export default {
     &-link {
       text-decoration: none;
       color: #000;
-      // font-weight: bold;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 
@@ -86,7 +87,6 @@ export default {
       background: none;
       border: none;
       cursor: pointer;
-      // background-color: #fff;
       padding: 0;
       gap: 8px;
     }
@@ -104,20 +104,16 @@ export default {
       &-name {
         display: flex;
         align-items: center;
-
         gap: 10px;
+        background-color: #efefef;
+        padding: 3px 3px 3px 15px;
+        border-radius: 25px;
       }
 
       &-image {
         border-radius: 100%;
       }
     }
-  }
-
-  span {
-    background-color: #EFEFEF;
-    padding: 3px 3px 3px 15px;
-    border-radius: 25px;
   }
 }
 </style>

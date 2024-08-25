@@ -1,16 +1,25 @@
 <template>
   <div class="page">
-    <header class="header">
-      <h1 class="header__title">ИГРАЙ</h1>
-      <div class="header__link">
+    <header class="page__header">
+      <h1 class="page__title">ИГРАЙ</h1>
+      <div class="page__link" @click="navigateToSection">
         В РАЗДЕЛ
-        <arrow class="arrow" />
+        <arrow class="page__arrow" />
       </div>
     </header>
-    <div class="cards-container">
-      <Card v-for="(card, index) in cards" :key="index" :image="card.image" :title="card.title"
-        :description="card.description" :noRadius="index === 1" :shiftRight="index === 1" />
-    </div>
+    <main class="page__content">
+      <div class="cards-container">
+        <Card 
+          v-for="(card, index) in cards" 
+          :key="index" 
+          :image="card.image" 
+          :title="card.title"
+          :description="card.description" 
+          :noRadius="index === 1" 
+          :shiftRight="index === 1" 
+        />
+      </div>
+    </main>
   </div>
 </template>
 
@@ -62,19 +71,12 @@ export default {
 <style lang="scss" scoped>
 .page {
   margin-top: 100px;
-}
 
-.cards-container {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  justify-content: space-around;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
 
   &__title {
     font-size: 4rem;
@@ -89,5 +91,22 @@ export default {
     font-size: 1.2rem;
     text-decoration: none;
   }
+
+  &__arrow {
+    color: inherit;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
 }
 </style>
